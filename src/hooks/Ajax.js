@@ -22,8 +22,8 @@ export const Ajax = async (url, method, dataSave = "") => {
   }
 
   const petition = await fetch(url, options);
-  const data = await petition.json();
-  datas = data;
+
+  datas = await petition.json();
   loading = false;
   return {
     datas,
