@@ -1,0 +1,347 @@
+/* Style the body */
+body {
+  font-family: Arial;
+  margin: 0;
+  overflow-x: hidden;
+}
+/*------CABECERA-------*/
+header {
+  padding: 60px;
+  text-align: center;
+  background: #1abc9c;
+  color: white;
+}
+/* Footer */
+footer {
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+}
+
+/*ESTILO DEL MENU*/
+nav {
+  background-color: #333;
+  position: sticky;
+  top: 0px;
+  min-height: 80px;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul {
+  display: flex;
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+nav ul li {
+  list-style: none;
+  padding: 14px 20px;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  padding: 32px 22px;
+}
+nav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+nav a:active {
+  background-color: #1abc9c;
+  color: black;
+}
+
+/*CONTENEDOR PRICIPAL DEL CUERPO*/
+div.row {
+  display: flex;
+  flex-wrap: wrap;
+  height: auto;
+}
+/*BARRA LATERAL*/
+aside {
+  width: 20%;
+  background-color: #f1f1f1;
+  padding: 20px;
+  min-height: 62dvh;
+}
+/*CONTENEDOR PRINCIPAL*/
+.content {
+  width: 75%;
+  background-color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+/*BUSCADOR BARRA LATERAL*/
+.search {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100px;
+  background: #e8e8e8;
+  padding: 0px 10px;
+}
+/*CAMPO DE BUSQUEDA BARRA LATERAL*/
+form {
+  flex: 80%;
+}
+.search input[type="text"] {
+  width: 94%;
+}
+
+/*CAMPOS PARA GREGAR ALTICULOS*/
+input[type="text"],
+textarea {
+  padding: 9px;
+  border-radius: 6px;
+  outline: none;
+  border-color: #333333;
+  border-style: solid;
+  width: 100%;
+  border-width: 2px;
+}
+textarea {
+  margin-top: 10px;
+  max-height: 85px;
+  width: 100%;
+  resize: vertical;
+}
+/*EFECTO AL HACER CLIC AL LOS CAMPOS*/
+input[type="text"]:focus,
+textarea:focus {
+  border-color: #1abc9c;
+}
+/*BOTON AGREGAR ARTICULO*/
+.search button {
+  padding: 9px;
+  border-radius: 6px;
+  margin-left: 8px;
+  outline: none;
+  border-style: solid;
+  border-color: #333;
+  background: #333333;
+  color: white;
+  cursor: pointer;
+  flex: 20%;
+}
+/*EFECTO HOVER DEL BOTON*/
+.search button:hover {
+  background: #1abc9c;
+  border-color: #1abc9c;
+}
+/*CONTENEDOR DE BUSCADOR*/
+.add {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.add [type="submit"] {
+  padding: 9px;
+  border-radius: 6px;
+  outline: none;
+  border-style: solid;
+  border-color: #333;
+  background: #333333;
+  color: white;
+  cursor: pointer;
+  width: 105%;
+  margin-top: 10px;
+}
+.add [type="submit"]:hover {
+  background: #1abc9c;
+  border-color: #1abc9c;
+}
+/*CONTENEDOR DE BIENVENIDA*/
+div.card {
+  width: 75%;
+  height: 350px;
+  background-color: #f1f1f1;
+  padding: 10px;
+  border-radius: 6px;
+  box-shadow: 1px 2px 3px 0px #aaa;
+  max-height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/*IMAGEN DEL CONTENEDOR*/
+.card .imgContent {
+  max-width: 150px;
+  max-height: 150px;
+  background-color: #aaa;
+  overflow: hidden;
+  width: 150px;
+  height: 150px;
+  margin-right: 16px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*TEXTOS DEL CONTENEDOR*/
+.card .texContentHome {
+  max-width: 90%;
+  max-height: 90%;
+  overflow: hidden;
+  width: 90%;
+  height: auto;
+  margin-right: 16px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/*TITULO DEL CONTENEDOR*/
+.card h3 {
+  line-height: 0;
+  color: #333;
+  font-size: 42px;
+}
+/*PARRAFO DEL CONTENEDOR*/
+.card p {
+  font-size: 14px;
+  font-style: normal;
+  line-height: 1.1;
+}
+
+/*BOTON DEL CONTENEDOR*/
+.card .texContentHome a {
+  padding: 9px;
+  border-radius: 6px;
+  margin-top: 16px;
+  outline: none;
+  border-style: solid;
+  border-color: #333;
+  background: #333333;
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/*EFECTO HOVER PARA EL BOTON DEL CONTENEDOR*/
+.card .texContentHome a:hover {
+  background: #1abc9c;
+  border-color: #1abc9c;
+}
+
+/*TARJETAS DEL LOS ARITCULOS*/
+div.cardArticle {
+  width: 75%;
+  height: 150px;
+  background-color: #f1f1f1;
+  padding: 10px;
+  border-radius: 6px;
+  box-shadow: 1px 2px 3px 0px #aaa;
+  max-height: 150px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  margin: 10px 0;
+}
+
+/*-----SESION DEL BLOG-----*/
+/*BOTON DEL IR AL INICIO*/
+.backtohome a {
+  padding: 9px;
+  border-radius: 6px;
+  outline: none;
+  border-style: solid;
+  border-color: #333;
+  background: #333333;
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+  position: absolute;
+  top: 25%;
+  right: 25%;
+}
+/*EFECTO HOVER PARA EL BOTON DEL IR AL INICIO*/
+.backtohome a:hover {
+  background: #1abc9c;
+  border-color: #1abc9c;
+}
+
+/*MARCO DE LA IMAGEN*/
+.cardArticle .imageContentArticle {
+  max-width: 150px;
+  max-height: 150px;
+  background-color: #aaa;
+  overflow: hidden;
+  width: 150px;
+  height: 150px;
+  margin-right: 16px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*CONTENEDOR DE LOS TEXTOS DEL ARTICULO*/
+.cardArticle .texContentArticle {
+  max-width: 90%;
+  max-height: 150px;
+  overflow: hidden;
+  width: 90%;
+  height: auto;
+  margin-right: 16px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+}
+/*TITULO DEL ARITUCLO*/
+.cardArticle h3 {
+  line-height: 0;
+  color: #333;
+  font-size: 26px;
+}
+/*PARRAFO DEL ARITUCLO*/
+.cardArticle p {
+  font-size: 14px;
+  font-style: normal;
+  line-height: 1.1;
+}
+
+/*BOTON DEL ARITUCLO*/
+.cardArticle .texContentArticle a {
+  padding: 9px;
+  border-radius: 6px;
+  outline: none;
+  border-style: solid;
+  border-color: #333;
+  background: #333333;
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+}
+/*EFECTO HOVER PARA EL BOTON DEL ARITUCLO*/
+.cardArticle .texContentArticle a:hover {
+  background: #1abc9c;
+  border-color: #1abc9c;
+}
+
+/*PANELES PRINCIPALES RESPONSIVO*/
+@media screen and (max-width: 700px) {
+  .side,
+  .content {
+    flex-direction: column;
+    width: 100%;
+  }
+}
