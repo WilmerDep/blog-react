@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { Global } from "../../helpers/Global";
 
 export const Articles = () => {
   const [articles, setArticles] = useState([]);
@@ -9,7 +10,7 @@ export const Articles = () => {
   }, []);
 
   const getArticle = async () => {
-    const url = "http://localhost:3900/api/articles";
+    const url = Global.url+"articles";
 
     try {
       let petition = await fetch(url, {
@@ -50,7 +51,6 @@ export const Articles = () => {
                 {article.image && (
                   <img src={article.image} alt="IMAGEN DE BIENVENIDA" />
                 )}
-                <p>IMG</p>
               </div>
               <div className="texContentArticle">
                 <h3>{article.title}</h3>
