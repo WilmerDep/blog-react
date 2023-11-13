@@ -9,7 +9,7 @@ export const Home = () => {
           <p>IMG</p>
         </div>
         <div className="texContentHome">
-          <h3>Bienvenido al mi Blog Git</h3>
+          <h3>Bienvenido al mi Blog</h3>
           <p>
             Blog desarrollado con MEARN Stack(Mongo, Express, React y NODEJS)
           </p>
