@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Global } from "../../helpers/Global";
+import { Petition } from "../../helpers/Petition";
 
 export const Articles = () => {
   const [articles, setArticles] = useState([]);
@@ -10,21 +11,11 @@ export const Articles = () => {
   }, []);
 
   const getArticle = async () => {
-    const url = Global.url+"articles";
-
     try {
-      let petition = await fetch(url, {
-        method: "GET",
-      });
+      const { datas, loading } = await Petition(Global.url + "articles", "GET");
 
-      if (petition.status !== 200) {
-        throw new Error("La solicitud a la API falló");
-      }
-
-      let data = await petition.json();
-
-      if (data.status === "success") {
-        setArticles(data.article);
+      if (datas.status === "success" && loading !== true) {
+        setArticles(datas.article);
       } else {
         throw new Error("La respuesta de la API no indica éxito");
       }
