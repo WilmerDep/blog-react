@@ -1,7 +1,8 @@
-import { Link } from "react-router-dom";
+
 import { useEffect, useState } from "react";
 import { Global } from "../../helpers/Global";
 import { Petition } from "../../helpers/Petition";
+import { ListArticles } from "./ListArticles";
 
 export const Articles = () => {
   const [articles, setArticles] = useState([]);
@@ -15,7 +16,7 @@ export const Articles = () => {
     try {
       const { datas, loading } = await Petition(Global.url + "articles", "GET");
 
-      if (datas.status === "success") {
+      if (datas.status === "success" && loading !== true) {
         setArticles(datas.article);
       } else {
         throw new Error("La respuesta de la API no indica éxito");
@@ -38,51 +39,11 @@ export const Articles = () => {
       <h3 className="loadingText">
       </div>*/}
 
-        {loading ? "Cargando..."  || Array.isArray(articles) || articles.length >= 1 :
-          
-          articles.map((article) => {
-            return (
-              <div key={article._id} className="cardArticle">
-                <div className="imageContentArticle">
-                  {article.image && (
-                    <img src={article.image} alt="IMAGEN DE BIENVENIDA" />
-                  )}
-                </div>
-                <div className="texContentArticle">
-                  <h3>{article.title}</h3>
-                  <p>{article.content}</p>
-                  <Link to="/articulos" className="button">
-                    Ver artículo
-                  </Link>
-                </div>
-              </div>
-            );
-          })
-        }
-
-
-      {/*Array.isArray(articles) || articles.length >= 1 ? (
-        articles.map((article) => {
-          return (
-            <div key={article._id} className="cardArticle">
-              <div className="imageContentArticle">
-                {article.image && (
-                  <img src={article.image} alt="IMAGEN DE BIENVENIDA" />
-                )}
-              </div>
-              <div className="texContentArticle">
-                <h3>{article.title}</h3>
-                <p>{article.content}</p>
-                <Link to="/articulos" className="button">
-                  Ver artículo
-                </Link>
-              </div>
-            </div>
-          );
-        })
+      {loading ? (
+        "Cargando..." || Array.isArray(articles) || articles.length >= 1
       ) : (
-        <p>No hay artículos disponibles.</p>
-      )*/}
+        <ListArticles articles={articles} />
+      )}
     </>
   );
 };

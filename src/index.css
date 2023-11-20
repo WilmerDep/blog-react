@@ -58,6 +58,8 @@ nav a {
   text-decoration: none;
   text-align: center;
   padding: 32px 22px;
+  transition-duration: .3s;
+  transition-property: background, border;
 }
 nav a:hover {
   background-color: #ddd;
@@ -88,7 +90,7 @@ aside {
   background-color: white;
   padding: 20px;
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: 1fr 1fr;
   align-content: center;
   align-items: center;
   justify-content: center;
@@ -144,6 +146,8 @@ textarea:focus {
   color: white;
   cursor: pointer;
   flex: 20%;
+  transition-duration: .3s;
+  transition-property: background, border;
 }
 /*EFECTO HOVER DEL BOTON*/
 .search button:hover {
@@ -170,6 +174,8 @@ textarea:focus {
   cursor: pointer;
   width: 105%;
   margin-top: 10px;
+  transition-duration: .3s;
+  transition-property: background, border;
 }
 .add [type="submit"]:hover {
   background: #1abc9c;
@@ -245,6 +251,8 @@ div.card {
   color: white;
   cursor: pointer;
   text-decoration: none;
+  transition-duration: .3s;
+  transition-property: background, border;
 }
 
 /*EFECTO HOVER PARA EL BOTON DEL CONTENEDOR*/
@@ -284,6 +292,8 @@ div.cardArticle {
   position: absolute;
   top: 25%;
   right: 25%;
+  transition-duration: .3s;
+  transition-property: background, border;
 }
 /*EFECTO HOVER PARA EL BOTON DEL IR AL INICIO*/
 .backtohome a:hover {
@@ -306,6 +316,10 @@ div.cardArticle {
   align-items: center;
 }
 
+.cardArticle .imageContentArticle img {
+  width: 250%;
+  height: 250px;
+}
 /*CONTENEDOR DE LOS TEXTOS DEL ARTICULO*/
 .cardArticle .texContentArticle {
   max-width: 90%;
@@ -344,6 +358,8 @@ div.cardArticle {
   color: white;
   cursor: pointer;
   text-decoration: none;
+  transition-duration: .3s;
+  transition-property: background, border;
 }
 /*EFECTO HOVER PARA EL BOTON DEL ARITUCLO*/
 .cardArticle .texContentArticle a:hover {
