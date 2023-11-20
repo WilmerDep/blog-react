@@ -1,3 +1,16 @@
+
+/*TEXTO GARGANDO*/
+.loadingText{
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  top: 50;
+  left: 25.5%;
+  background-color: #333;
+  padding: 180px;
+  border-radius: 8px;
+  color: #FFF;
+}
 /* Style the body */
 body {
   font-family: Arial;
@@ -74,8 +87,9 @@ aside {
   width: 75%;
   background-color: white;
   padding: 20px;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: auto auto;
+  align-content: center;
   align-items: center;
   justify-content: center;
 }
@@ -163,13 +177,13 @@ textarea:focus {
 }
 /*CONTENEDOR DE BIENVENIDA*/
 div.card {
-  width: 75%;
-  height: 350px;
+  width: 775px;
+  height: 550px;
   background-color: #f1f1f1;
   padding: 10px;
   border-radius: 6px;
   box-shadow: 1px 2px 3px 0px #aaa;
-  max-height: 350px;
+  max-height: 750px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -178,12 +192,12 @@ div.card {
 
 /*IMAGEN DEL CONTENEDOR*/
 .card .imgContent {
-  max-width: 150px;
-  max-height: 150px;
+  max-width: 250px;
+  max-height: 250px;
   background-color: #aaa;
   overflow: hidden;
-  width: 150px;
-  height: 150px;
+  width: auto;
+  height: 250px;
   margin-right: 16px;
   border-radius: 6px;
   display: flex;
@@ -241,7 +255,7 @@ div.card {
 
 /*TARJETAS DEL LOS ARITCULOS*/
 div.cardArticle {
-  width: 75%;
+  width: 92%;
   height: 150px;
   background-color: #f1f1f1;
   padding: 10px;
@@ -279,11 +293,11 @@ div.cardArticle {
 
 /*MARCO DE LA IMAGEN*/
 .cardArticle .imageContentArticle {
-  max-width: 150px;
+  max-width: 250px;
   max-height: 150px;
   background-color: #aaa;
   overflow: hidden;
-  width: 150px;
+  width: 250px;
   height: 150px;
   margin-right: 16px;
   border-radius: 6px;
@@ -297,7 +311,7 @@ div.cardArticle {
   max-width: 90%;
   max-height: 150px;
   overflow: hidden;
-  width: 90%;
+  width: 98%;
   height: auto;
   margin-right: 16px;
   border-radius: 6px;
@@ -310,7 +324,7 @@ div.cardArticle {
 .cardArticle h3 {
   line-height: 0;
   color: #333;
-  font-size: 26px;
+  font-size: 22px;
 }
 /*PARRAFO DEL ARITUCLO*/
 .cardArticle p {

@@ -9,7 +9,7 @@ export const Home = () => {
         <div className="texContentHome">
           <h3>Bienvenido al mi Blog</h3>
           <p>
-            Blog desarrollado con MEARN Stack(Mongo, Express, React y NODEJS)
+            Blog desarrollado con MEARN Stack <strong>(Mongo, Express, React y NODEJS)</strong>
           </p>
           <Link to="/articulos" className="button">
             Ir al Blog
