@@ -111,10 +111,15 @@ form {
 .search input[type="text"] {
   width: 94%;
 }
-
-/*CAMPOS PARA GREGAR ALTICULOS*/
-input[type="text"],
-textarea {
+/*LABELS DE FORMULARIO*/
+label{
+  line-height: 3em;
+  font-weight: bold;
+}
+/*CAMPOS PARA AGREGAR ALTICULOS*/
+.form-group input,
+.form-group textarea
+{
   padding: 9px;
   border-radius: 6px;
   outline: none;
@@ -122,19 +127,54 @@ textarea {
   border-style: solid;
   width: 100%;
   border-width: 2px;
+  outline: none;
 }
+.form-group input[type="file"]{
+  border-color: #8d8d8d7a;
+  padding: 1.5em 10px;
+}
+
 textarea {
   margin-top: 10px;
   max-height: 85px;
   width: 100%;
   resize: vertical;
+  outline: none;
+}
+/*BOTON ENVIAR*/
+.form-group input[type="submit"]{
+  margin-top: 2em;
+  border-color: #8d8d8d7a;
+  padding: 1.5em 10px;
+  width: 105%;
+  font-weight: bold;
+}
+.form-group input[type="submit"]:hover {
+  background: #1abc9c;
+  border-color: #1abc9c;
+  color: white;
+  transition-duration: .3s;
+  transition-property: background, border, color;
 }
 /*EFECTO AL HACER CLIC AL LOS CAMPOS*/
 input[type="text"]:focus,
 textarea:focus {
   border-color: #1abc9c;
 }
+
 /*BOTON AGREGAR ARTICULO*/
+.search input {
+  padding: 9px;
+  border-radius: 6px;
+  outline: none;
+  border-color: #333333;
+  border-style: solid;
+  width: 100%;
+  border-width: 2px;
+  outline: none;
+  transition-duration: .3s;
+  transition-property: background, border;
+}
 .search button {
   padding: 9px;
   border-radius: 6px;
@@ -150,6 +190,7 @@ textarea:focus {
   transition-property: background, border;
 }
 /*EFECTO HOVER DEL BOTON*/
+
 .search button:hover {
   background: #1abc9c;
   border-color: #1abc9c;
@@ -345,6 +386,25 @@ div.cardArticle {
   font-size: 14px;
   font-style: normal;
   line-height: 1.1;
+}
+/*BOTONES DE ARTICULOS*/
+.buttons{
+  display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 8px
+}
+.buttons button{
+  border-radius: 8px;
+  outline: none;
+  transition-duration: .3s;
+  font-size: 14px;
+  font-style: normal;
+  transition-property: background, border;
+}
+.buttons button:hover{
+  color: #FFF;
+  background: #bc1a1a;
+  border-color: #bc1a1a;
 }
 
 /*BOTON DEL ARITUCLO*/
