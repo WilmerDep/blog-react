@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { Global } from "../../helpers/Global";
 import { Petition } from "../../helpers/Petition";
@@ -42,7 +41,7 @@ export const Articles = () => {
       {loading ? (
         "Cargando..." || Array.isArray(articles) || articles.length >= 1
       ) : (
-        <ListArticles articles={articles} />
+        <ListArticles articles={articles} setArticles={setArticles} />
       )}
     </>
   );
