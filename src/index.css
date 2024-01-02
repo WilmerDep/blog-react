@@ -358,6 +358,19 @@ div.cardArticle {
   width: 250%;
   height: 250px;
 }
+
+/* IMAGEN DESTACADA DENTRO DEL ARTICULO*/
+.card .imageContentSingleArticle img {
+ 
+  width:300px;
+  height: auto;
+  margin-right: 16px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /*CONTENEDOR DE LOS TEXTOS DEL ARTICULO*/
 .cardArticle .texContentArticle {
   max-width: 90%;

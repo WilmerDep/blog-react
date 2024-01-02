@@ -11,14 +11,14 @@ export const Search = () => {
   const params = useParams();
 
   useEffect(() => {
-    getArticle();
+    getArticles();
   }, []);
 
   useEffect(() => {
-    getArticle();
+    getArticles();
   }, [params]);
 
-  const getArticle = async () => {
+  const getArticles = async () => {
     
     try {
       const { datas, loading } = await Petition(
@@ -53,5 +53,5 @@ export const Search = () => {
       )}
     </>
   );
-};
+}
 

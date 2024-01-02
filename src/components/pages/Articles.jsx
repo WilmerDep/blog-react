@@ -8,10 +8,10 @@ export const Articles = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    getArticle();
+    getArticles();
   }, []);
 
-  const getArticle = async () => {
+  const getArticles = async () => {
     try {
       const { datas, loading } = await Petition(Global.url + "articles", "GET");
 
@@ -31,12 +31,6 @@ export const Articles = () => {
 
   return (
     <>
-      {/*  <div className="backtohome">
-        <Link to="/" className="button">
-        Volver al Inicio
-        </Link>
-      <h3 className="loadingText">
-      </div>*/}
 
       {loading ? (
         "Cargando..." || Array.isArray(articles) || articles.length >= 1
@@ -45,4 +39,4 @@ export const Articles = () => {
       )}
     </>
   );
-};
+}
