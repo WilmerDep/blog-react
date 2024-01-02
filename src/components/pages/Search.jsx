@@ -27,7 +27,7 @@ export const Search = () => {
       );
 
       if (datas.status === "success" && !loading) {
-        setArticles(datas.article);
+        setArticles(datas.articles);
       } else {
         setArticles([]);
         throw new Error("La respuesta de la API no indica éxito");
