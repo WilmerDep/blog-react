@@ -25,7 +25,7 @@ export const Routers = () => {
           <Route path="/buscar/:searching" element={<Search />} />
 
           <Route path="*" element={
-            <div className="pageNotFound">
+            <div className="card">
                 <h1>Pagina no encontrada </h1>
                 <h3>ERROR 404</h3>
                 <div className="backtohome">
