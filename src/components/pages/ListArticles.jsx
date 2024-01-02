@@ -5,10 +5,11 @@ import { Petition } from "../../helpers/Petition";
 export const ListArticles = ({ articles, setArticles }) => {
   const deleteArticle = async (id) => {
     try {
-      let { datas } = await Petition(Global.url + "article/" + id, "DELETE");
+      const { datas } = await Petition(Global.url + "article/" + id, "DELETE");
       console.log(datas);
 
-      if (datas.status === "success") {
+      if (datas.status === "success" && setArticles) {
+
         let articleUpdate = articles.filter((article) => article._id !== id);
         setArticles(articleUpdate); // Actualiza el estado global
       }

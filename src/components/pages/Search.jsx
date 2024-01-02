@@ -11,7 +11,6 @@ export const Search = () => {
   const params = useParams();
 
   useEffect(() => {
-    console.log(params);
     getArticle();
   }, []);
 
@@ -20,6 +19,8 @@ export const Search = () => {
   }, [params]);
 
   const getArticle = async () => {
+    setError(null); // Reinicializar el estado de error
+
     try {
       const { datas, loading } = await Petition(
         Global.url + "buscar/" + params.searching,
@@ -47,10 +48,11 @@ export const Search = () => {
       {error ? (
         <h2>{error}</h2>
       ) : loading ? (
-        "Cargando..." 
+        "Cargando..." || Array.isArray(articles) || articles.length >= 1
       ) : (
         <ListArticles articles={articles} setArticles={setArticles} />
       )}
     </>
   );
 };
+
