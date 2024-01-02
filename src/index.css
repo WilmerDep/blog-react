@@ -90,7 +90,7 @@ aside {
   background-color: #3b3b3b;
   padding: 20px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: auto auto;
   align-content: center;
   align-items: center;
   justify-content: center;
