@@ -19,8 +19,7 @@ export const Search = () => {
   }, [params]);
 
   const getArticle = async () => {
-    setError(null); // Reinicializar el estado de error
-
+    
     try {
       const { datas, loading } = await Petition(
         Global.url + "buscar/" + params.searching,
