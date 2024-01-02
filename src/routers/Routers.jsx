@@ -22,7 +22,7 @@ export const Routers = () => {
           <Route path="/inicio" element={<Home />} />
           <Route path="/articulos" element={<Articles />} />
           <Route path="/crear" element={<Create />} />
-          <Route path="/buscar/:search" element={<Search />} />
+          <Route path="/buscar/:searching" element={<Search />} />
 
           <Route path="*" element={
             <div className="pageNotFound">

@@ -16,7 +16,7 @@ export const Sidebar = () => {
       <aside className="side">
         <div className="search">
           <form onSubmit={goSearch}>
-            <input type="text" name="searchFile" />
+            <input type="text" name="searchFile"/>
           <input type="submit" id="search" value="Buscador" />
           </form>
         </div>

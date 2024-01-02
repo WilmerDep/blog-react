@@ -11,6 +11,7 @@ export const Search = () => {
   const params = useParams();
 
   useEffect(() => {
+    console.log(params);
     getArticle();
   }, []);
 
@@ -21,11 +22,11 @@ export const Search = () => {
   const getArticle = async () => {
     try {
       const { datas, loading } = await Petition(
-        Global.url + "buscar/" + params.search,
+        Global.url + "buscar/" + params.searching,
         "GET"
       );
 
-      if (datas.status === "success" && loading) {
+      if (datas.status === "success" && !loading) {
         setArticles(datas.article);
       } else {
         setArticles([]);
@@ -39,14 +40,14 @@ export const Search = () => {
     }
 
     setLoading(false);
-  };
+  }
 
   return (
     <>
       {error ? (
         <h2>{error}</h2>
       ) : loading ? (
-        "Cargando..." || Array.isArray(articles) || articles.length >= 1
+        "Cargando..." 
       ) : (
         <ListArticles articles={articles} setArticles={setArticles} />
       )}
