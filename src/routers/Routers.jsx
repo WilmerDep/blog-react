@@ -1,4 +1,4 @@
-import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { Routes, Route, BrowserRouter, Link } from "react-router-dom";
 import { Home } from "../components/pages/Home";
 import { Articles } from "../components/pages/Articles";
 import { Create } from "../components/pages/Create";
@@ -28,6 +28,9 @@ export const Routers = () => {
             <div className="pageNotFound">
                 <h1>Pagina no encontrada </h1>
                 <h3>ERROR 404</h3>
+                <div className="backtohome">
+                  <Link to="/articulos" className="button"> Volver al Blog </Link> 
+                </div>
             </div>
           } />
         </Routes>

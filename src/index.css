@@ -330,9 +330,6 @@ div.cardArticle {
   color: white;
   cursor: pointer;
   text-decoration: none;
-  position: absolute;
-  top: 25%;
-  right: 25%;
   transition-duration: .3s;
   transition-property: background, border;
 }
