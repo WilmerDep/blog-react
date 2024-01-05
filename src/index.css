@@ -319,6 +319,10 @@ div.cardArticle {
 }
 
 /*-----SESION DEL BLOG-----*/
+/*CAJA DE BOTON*/
+.backtohome {
+  margin-top: 20px;
+}
 /*BOTON DEL IR AL INICIO*/
 .backtohome a {
   padding: 9px;
@@ -363,6 +367,18 @@ div.cardArticle {
 .card .imageContentSingleArticle img {
  
   width:300px;
+  height: auto;
+  margin-right: 16px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* IMAGEN DESTACADA DENTRO DEL ARTICULO*/
+.form-group .imageContentSingleArticle img {
+ 
+  width:150px;
   height: auto;
   margin-right: 16px;
   border-radius: 6px;

@@ -40,6 +40,9 @@ export const SingleArticle = () => {
       ) : (
         <>
           <div className="card">
+          <Link to={"/editar/" + article._id} className="button">
+            Editar artículo
+          </Link>
             <div className="imageContentSingleArticle">
               {article.image !== "default.png" && (
                 <img
@@ -57,11 +60,10 @@ export const SingleArticle = () => {
             </div>
             <h1>{article.title}</h1>
             <p>{article.content}</p>
-
+            <span>{article.date}</span>
             <div className="backtohome">
               <Link to="/articulos" className="button">
-                {" "}
-                Volver al Blog{" "}
+               Volver al Blog
               </Link>
             </div>
           </div>

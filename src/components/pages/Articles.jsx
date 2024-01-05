@@ -27,7 +27,7 @@ export const Articles = () => {
     }
 
     setLoading(false);
-  };
+  }
 
   return (
     <>
