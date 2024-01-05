@@ -4,7 +4,7 @@ import { Petition } from "../../helpers/Petition";
 import { Global } from "../../helpers/Global";
 
 export const Create = () => {
-  const { form, submited, changed } = useForm({});
+  const { form, changed } = useForm({});
   const [result, setResult] = useState("no_enviado");
 
   const saveArticles = async (e)  => {

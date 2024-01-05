@@ -21,7 +21,7 @@ export const ListArticles = ({ articles, setArticles }) => {
   return articles.map((article) => (
     <div key={article._id} className="cardArticle">
       <div className="imageContentArticle">
-        {article.image !== "default.png" && (
+        {article.image && article.image !== "default.png" && (
           <img
             src={Global.url + "imagen/" + article.image}
             alt="IMAGEN DE BIENVENIDA"
@@ -39,7 +39,7 @@ export const ListArticles = ({ articles, setArticles }) => {
         <h3>{article.title}</h3>
         <p>{article.content}</p>
         <div className="buttons">
-          <Link to={"/articulo/" + article._id} className="button">
+          <Link to={"/articulo/"+ article._id} className="button">
             Ver artículo
           </Link>
           <button className="button" onClick={() => deleteArticle(article._id)}>
