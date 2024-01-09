@@ -114,7 +114,6 @@ export const Edit = () => {
             <label htmlFor="file0">Imagen Destacada</label>
             <div className="imageContentSingleArticle">
               
-              
             </div>
 
             <input type="file" id="file" name="file" />
