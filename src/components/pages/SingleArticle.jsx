@@ -40,22 +40,21 @@ export const SingleArticle = () => {
       ) : (
         <>
           <div className="card">
-          <Link to={"/editar/" + article._id} className="button">
-            Editar artículo
-          </Link>
+            <Link to={"/editar/" + article._id} className="button">
+              Editar artículo
+            </Link>
             <div className="imageContentSingleArticle">
-              {article.image !== "default.png" && (
+              {article.image ? (
                 <img
-                  src={Global.url + "imagen/" + article.image}
+                  src={
+                    article.image !== "default.png"
+                      ? Global.url + "imagen/" + article.image
+                      : "https://codersera.com/blog/wp-content/uploads/2019/12/Learn-Reactjs.jpeg"
+                  }
                   alt="IMAGEN DE BIENVENIDA"
                 />
-              )}
-
-              {article.image === "default.png" && (
-                <img
-                  src="https://codersera.com/blog/wp-content/uploads/2019/12/Learn-Reactjs.jpeg"
-                  alt="IMAGEN DE BIENVENIDA"
-                />
+              ) : (
+                <p>Error al cargar la imagen</p>
               )}
             </div>
             <h1>{article.title}</h1>
@@ -63,7 +62,7 @@ export const SingleArticle = () => {
             <span>{article.date}</span>
             <div className="backtohome">
               <Link to="/articulos" className="button">
-               Volver al Blog
+                Volver al Blog
               </Link>
             </div>
           </div>
@@ -71,4 +70,4 @@ export const SingleArticle = () => {
       )}
     </>
   );
-}
+};

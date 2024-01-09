@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react"; // IMPORTANDO EL HOOK USESTATE
-import { useForm } from "../../hooks/useForm"; //IMPORTANDO EL HOOK PERSONALIZADO
+import { useState, useEffect } from "react";
+import { useForm } from "../../hooks/useForm";
 import { Petition } from "../../helpers/Petition";
 import { Global } from "../../helpers/Global";
 import { useParams } from "react-router-dom";
@@ -7,7 +7,8 @@ import { useParams } from "react-router-dom";
 export const Edit = () => {
   const { form, changed } = useForm({});
   const [result, setResult] = useState("no_enviado");
-  const [article, setArticle] = useState([]);
+  const [article, setArticle] = useState({});
+  const [error, setError] = useState(null); // Nuevo estado para manejar errores
   const params = useParams();
 
   useEffect(() => {
@@ -28,12 +29,13 @@ export const Edit = () => {
       }
     } catch (error) {
       console.error("Error al obtener artículos:", error);
-      // Aquí puedes agregar lógica adicional para manejar el error, como mostrar un mensaje al usuario.
-      <h2>Ha currido un error</h2>;
+      setError(
+        "Ha ocurrido un error al obtener los artículos. Por favor, inténtalo de nuevo más tarde."
+      );
     }
-  }
+  };
 
-  const editArticles = async (e) => {
+  const editArticle = async (e) => {
     e.preventDefault(); // QUITA EL REFRESH DEL FORMULARIO
 
     // RECOGIENDO DATOS DEL FORMULARIO
@@ -56,7 +58,7 @@ export const Edit = () => {
       formData.append("file", fileInput.files[0]);
       const upload = await Petition(
         Global.url + "subir-imagen/" + datas.article._id,
-        "PUT",
+        "POST",
         formData,
         true
       );
@@ -69,29 +71,31 @@ export const Edit = () => {
     }
 
     console.log(datas);
-  }
+  };
 
   return (
     <>
       <div className="card">
         <h3>Editar Articulos: {article.title}</h3>
         <strong>
-          {result == "guardado" ? "Articulo guardado con Exito" : ""}
+          {result === "guardado" ? "Articulo guardado con Éxito" : ""}
         </strong>
         <strong>
-          {result == "error"
-            ? "Error al guardar el Articulo, el titulo  o contenido debe superar los 3 caracteres"
+          {result === "error"
+            ? "Error al guardar el Articulo, el título o contenido debe superar los 3 caracteres"
             : ""}
         </strong>
+        {error && <h2>{error}</h2>}
 
-        <form onSubmit={editArticles}>
+        <form onSubmit={editArticle}>
+          {/* Resto del formulario permanece sin cambios */}
           <div className="form-group">
             <label htmlFor="title">Titulo</label>
             <input
               onChange={changed}
               type="text"
               name="title"
-              placeholder="Editar Titulo"
+              placeholder="Titulo"
               id="title"
               defaultValue={article.title}
             />
@@ -103,7 +107,7 @@ export const Edit = () => {
               onChange={changed}
               name="content"
               id="content"
-              placeholder="Editar el Contenido del Articulo"
+              placeholder="Contenido del Articulo"
               cols="30"
               rows="10"
               defaultValue={article.content}
@@ -113,9 +117,19 @@ export const Edit = () => {
           <div className="form-group">
             <label htmlFor="file0">Imagen Destacada</label>
             <div className="imageContentSingleArticle">
-              
+              {article.image ? (
+                <img
+                  src={
+                    article.image !== "default.png"
+                      ? Global.url + "imagen/" + article.image
+                      : "https://codersera.com/blog/wp-content/uploads/2019/12/Learn-Reactjs.jpeg"
+                  }
+                  alt="IMAGEN DE BIENVENIDA"
+                />
+              ) : (
+                <p>Error al cargar la imagen</p>
+              )}
             </div>
-
             <input type="file" id="file" name="file" />
           </div>
 

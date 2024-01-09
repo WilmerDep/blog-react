@@ -9,37 +9,35 @@ export const ListArticles = ({ articles, setArticles }) => {
       console.log(datas);
 
       if (datas.status === "success" && setArticles) {
-
         let articleUpdate = articles.filter((article) => article._id !== id);
         setArticles(articleUpdate); // Actualiza el estado global
       }
     } catch (error) {
       console.error("Error al borrar el artículo:", error);
     }
-  }
+  };
 
   return articles.map((article) => (
     <div key={article._id} className="cardArticle">
       <div className="imageContentArticle">
-        {article.image && article.image !== "default.png" && (
+        {article.image ? (
           <img
-            src={Global.url + "imagen/" + article.image}
+            src={
+              article.image !== "default.png"
+                ? Global.url + "imagen/" + article.image
+                : "https://codersera.com/blog/wp-content/uploads/2019/12/Learn-Reactjs.jpeg"
+            }
             alt="IMAGEN DE BIENVENIDA"
           />
-        )}
-
-        {article.image === "default.png" && (
-          <img
-            src="https://codersera.com/blog/wp-content/uploads/2019/12/Learn-Reactjs.jpeg"
-            alt="IMAGEN DE BIENVENIDA"
-          />
+        ) : (
+          <p>Error al cargar la imagen</p>
         )}
       </div>
       <div className="texContentArticle">
         <h3>{article.title}</h3>
         <p>{article.content}</p>
         <div className="buttons">
-          <Link to={"/articulo/"+ article._id} className="button">
+          <Link to={"/articulo/" + article._id} className="button">
             Ver artículo
           </Link>
           <button className="button" onClick={() => deleteArticle(article._id)}>
@@ -49,4 +47,4 @@ export const ListArticles = ({ articles, setArticles }) => {
       </div>
     </div>
   ));
-}
+};
