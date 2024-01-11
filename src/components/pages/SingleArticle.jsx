@@ -3,6 +3,9 @@ import { Global } from "../../helpers/Global";
 import { Petition } from "../../helpers/Petition";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPenToSquare, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+
 export const SingleArticle = () => {
   const [article, setArticle] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -41,7 +44,7 @@ export const SingleArticle = () => {
         <>
           <div className="card">
             <Link to={"/editar/" + article._id} className="button">
-              Editar artículo
+              Editar artículo <FontAwesomeIcon icon={faPenToSquare} />
             </Link>
             <div className="imageContentSingleArticle">
               {article.image ? (
@@ -62,7 +65,7 @@ export const SingleArticle = () => {
             <span>{article.date}</span>
             <div className="backtohome">
               <Link to="/articulos" className="button">
-                Volver al Blog
+              <FontAwesomeIcon icon={faArrowLeft} /> Volver al Blog 
               </Link>
             </div>
           </div>

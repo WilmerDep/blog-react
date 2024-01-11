@@ -4,6 +4,7 @@ import { Petition } from "../../helpers/Petition";
 import { Global } from "../../helpers/Global";
 import { useParams } from "react-router-dom";
 
+
 export const Edit = () => {
   const { form, changed } = useForm({});
   const [result, setResult] = useState("no_enviado");

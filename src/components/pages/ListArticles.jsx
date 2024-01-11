@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
 import { Global } from "../../helpers/Global";
 import { Petition } from "../../helpers/Petition";
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowUpRightFromSquare, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 
 const MaxLengthText = ({ text, maxLength }) => {
   const truncatedText = text.length > maxLength ? text.slice(0, maxLength) + '...' : text;
   return <>{truncatedText}</>;
-};
+}
 
 export const ListArticles = ({ articles, setArticles }) => {
   const deleteArticle = async (id) => {
@@ -40,15 +41,15 @@ export const ListArticles = ({ articles, setArticles }) => {
         )}
       </div>
       <div className="texContentArticle">
-        <h3><MaxLengthText text={article.title} maxLength={30} /></h3>
+        <h3><MaxLengthText text={article.title} maxLength={40} /></h3>
         <p><MaxLengthText text={article.content} maxLength={80} /></p>
         {/* Cambié el valor de maxLength a 100, puedes ajustarlo según tus necesidades */}
         <div className="buttons">
           <Link to={"/articulo/" + article._id} className="button">
-            Ver artículo
+            Ver artículo <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
           </Link>
           <button className="button" onClick={() => deleteArticle(article._id)}>
-            Borrar
+            Borrar  <FontAwesomeIcon icon={faTrashCan} />
           </button>
         </div>
       </div>
