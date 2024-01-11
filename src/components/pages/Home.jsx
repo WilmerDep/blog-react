@@ -9,9 +9,9 @@ export const Home = () => {
           <img src="https://picsum.photos/id/237/200/300" alt="" />
         </div>
         <div className="texContentHome">
-          <h3>Bienvenido al mi Blog</h3>
+          <h3>Bienvenido a mi Blog</h3>
           <p>
-            Blog desarrollado con MEARN Stack <strong>(Mongo, Express, React y NODEJS)</strong>
+            Blog desarrollado con MEARN Stack <strong>(Mongo DB, Express, React y NODEJS)</strong>
           </p>
           <Link to="/articulos" className="button">
             Ir al Blog  <FontAwesomeIcon icon={faBlog} /> 
