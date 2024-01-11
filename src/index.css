@@ -78,6 +78,13 @@ nav ul li {
   list-style: none;
   padding: 14px 20px;
 }
+
+nav ul li:first-child {
+  list-style: none;
+  font-size: 40px;
+  color: white;
+}
+
 nav a {
   color: white;
   text-decoration: none;

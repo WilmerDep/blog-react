@@ -42,7 +42,7 @@ export const ListArticles = ({ articles, setArticles }) => {
       </div>
       <div className="texContentArticle">
         <h3><MaxLengthText text={article.title} maxLength={40} /></h3>
-        <p><MaxLengthText text={article.content} maxLength={80} /></p>
+        <p><MaxLengthText text={article.content} maxLength={128} /></p>
         {/* Cambié el valor de maxLength a 100, puedes ajustarlo según tus necesidades */}
         <div className="buttons">
           <Link to={"/articulo/" + article._id} className="button">
