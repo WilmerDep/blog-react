@@ -14,7 +14,6 @@ export const Routers = () => {
   return (
     <BrowserRouter>
       {/*LAYOUT*/}
-      <Header />
       <Nav />
       <div className="row">
       {/* CONTENIDO CENTRAL Y RUTAS */}

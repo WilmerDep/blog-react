@@ -1,6 +1,5 @@
-
 /*TEXTO GARGANDO*/
-.loadingText{
+.loadingText {
   position: fixed;
   justify-content: center;
   align-items: center;
@@ -9,27 +8,39 @@
   background-color: #333;
   padding: 180px;
   border-radius: 8px;
-  color: #FFF;
+  color: #fff;
 }
 /* Style the body */
 body {
   font-family: Arial;
   margin: 0;
   overflow-x: hidden;
+  background-color: #3b3b3b;
 }
 /*------CABECERA-------*/
-header {
-  padding: 60px;
-  text-align: center;
-  background: #1abc9c;
-  color: white;
-}
 /* Footer */
 footer {
+  display: flex;
+  place-content: center;
   width: 100%;
-  padding: 20px;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  bottom: -5rem;
+  left: 0;
+  z-index: 10;
+}
+.contentFotter {
+  width: 98%;
   text-align: center;
-  background: #ddd;
+  background: linear-gradient(
+    rgba(255, 255, 255, 0.15) 0%,
+    rgba(255, 255, 255, 0.5) 100%
+  );
+  box-shadow: var(--bx-sh-1);
+  padding: 20px 0px;
+  border-radius: 6px;
 }
 
 /*ESTILO DEL MENU*/
@@ -37,16 +48,30 @@ nav {
   background-color: #333;
   position: sticky;
   top: 0px;
-  min-height: 80px;
-  display: flex;
-  justify-content: center;
+  min-height: 60px;
+  display: grid;
+  grid-auto-flow: 2;
+  grid-auto-columns: 1 / span 2;
+  padding: 10px 20px;
+  z-index: 10;
 }
 
 nav ul {
-  display: flex;
-  margin: 0;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
   justify-content: center;
   align-items: center;
+  text-align: center;
+  list-style-type: none;
+  margin: 0;
+  background: linear-gradient(
+    rgba(255, 255, 255, 0.15) 0%,
+    rgba(255, 255, 255, 0.5) 100%
+  );
+  box-shadow: var(--bx-sh-1);
+  backdrop-filter: blur(5px);
+  border-radius: 12px;
+  overflow: hidden;
 }
 
 nav ul li {
@@ -58,7 +83,7 @@ nav a {
   text-decoration: none;
   text-align: center;
   padding: 32px 22px;
-  transition-duration: .3s;
+  transition-duration: 0.3s;
   transition-property: background, border;
 }
 nav a:hover {
@@ -73,27 +98,38 @@ nav a:active {
 
 /*CONTENEDOR PRICIPAL DEL CUERPO*/
 div.row {
+  background-color: #3b3b3b;
   display: grid;
   height: auto;
   grid-template-columns: 4fr 1fr;
+  gap: 16px;
 }
 /*BARRA LATERAL*/
 aside {
-  width: 100%;
-  background-color: #f1f1f1;
-  /*padding: 20px;*/
+  width: 94%;
+  background: linear-gradient(
+    rgba(255, 255, 255, 0.15) 0%,
+    rgba(255, 255, 255, 0.5) 100%
+  );
+  box-shadow: var(--bx-sh-1);
+  backdrop-filter: blur(5px);
   min-height: 62dvh;
+  margin: 26px 0px;
+  border-radius: 12px;
 }
 /*CONTENEDOR PRINCIPAL*/
 .content {
-  width: 100%;
+  width: 97%;
   background-color: #3b3b3b;
   padding: 20px;
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-rows: auto auto auto auto;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   align-content: center;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+  grid-column-gap: 1rem;
+  justify-items: center;
 }
 /*BUSCADOR BARRA LATERAL*/
 .search {
@@ -101,7 +137,7 @@ aside {
   justify-content: space-around;
   align-items: center;
   height: 100px;
-  background: #e8e8e8;
+  border-bottom: 1px solid #ddd;
   padding: 0px 10px;
 }
 /*CAMPO DE BUSQUEDA BARRA LATERAL*/
@@ -109,17 +145,67 @@ form {
   flex: 80%;
 }
 .search input[type="text"] {
-  width: 94%;
+  width: 60%;
 }
+.search input[type="submit"] {
+  width: 30%;
+  padding: 9px;
+  border-radius: 6px;
+  margin-left: 8px;
+  outline: none;
+  border-style: solid;
+  border-color: #333;
+  background: #333333;
+  color: white;
+  cursor: pointer;
+  flex: 20%;
+  transition-duration: 0.3s;
+  transition-property: background, border;
+}
+
+.search input[type="submit"]:hover {
+  background: #1abc9c;
+  border-color: #1abc9c;
+  color: white;
+  transition-duration: 0.3s;
+  transition-property: background, border, color;
+}
+.searchNav {
+  width: 18em;
+  display: none;
+}
+
+.searchNav input[type="text"] {
+  width: 60%;
+  padding: 9px;
+  border-radius: 16px;
+  border: 0;
+  border: 2px solid #1abc9c;
+}
+.searchNav input[type="submit"] {
+  width: 30%;
+  padding: 9px;
+  border-radius: 16px;
+  margin-left: 6px;
+  outline: none;
+  border-style: solid;
+  border-color: #1abc9c;
+  background: #1abc9c;
+  color: white;
+  cursor: pointer;
+  flex: 20%;
+  transition-duration: 0.3s;
+  transition-property: background, border;
+}
+
 /*LABELS DE FORMULARIO*/
-label{
+label {
   line-height: 3em;
   font-weight: bold;
 }
 /*CAMPOS PARA AGREGAR ALTICULOS*/
 .form-group input,
-.form-group textarea
-{
+.form-group textarea {
   padding: 9px;
   border-radius: 6px;
   outline: none;
@@ -129,7 +215,7 @@ label{
   border-width: 2px;
   outline: none;
 }
-.form-group input[type="file"]{
+.form-group input[type="file"] {
   border-color: #8d8d8d7a;
   padding: 1.5em 10px;
 }
@@ -142,7 +228,7 @@ textarea {
   outline: none;
 }
 /*BOTON ENVIAR*/
-.form-group input[type="submit"]{
+.form-group input[type="submit"] {
   margin-top: 2em;
   border-color: #8d8d8d7a;
   padding: 1.5em 10px;
@@ -153,7 +239,7 @@ textarea {
   background: #1abc9c;
   border-color: #1abc9c;
   color: white;
-  transition-duration: .3s;
+  transition-duration: 0.3s;
   transition-property: background, border, color;
 }
 /*EFECTO AL HACER CLIC AL LOS CAMPOS*/
@@ -172,7 +258,7 @@ textarea:focus {
   width: 100%;
   border-width: 2px;
   outline: none;
-  transition-duration: .3s;
+  transition-duration: 0.3s;
   transition-property: background, border;
 }
 .search button {
@@ -186,7 +272,7 @@ textarea:focus {
   color: white;
   cursor: pointer;
   flex: 20%;
-  transition-duration: .3s;
+  transition-duration: 0.3s;
   transition-property: background, border;
 }
 /*EFECTO HOVER DEL BOTON*/
@@ -215,7 +301,7 @@ textarea:focus {
   cursor: pointer;
   width: 105%;
   margin-top: 10px;
-  transition-duration: .3s;
+  transition-duration: 0.3s;
   transition-property: background, border;
 }
 .add [type="submit"]:hover {
@@ -225,18 +311,29 @@ textarea:focus {
 /*CONTENEDOR DE BIENVENIDA*/
 div.card {
   width: 775px;
-  height: 550px;
-  background-color: #f1f1f1;
-  padding: 10px;
+  height: auto;
+  min-height: 550px;
+  background: linear-gradient(
+    rgba(255, 255, 255, 0.15) 0%,
+    rgba(255, 255, 255, 0.5) 100%
+  );
+  box-shadow: var(--bx-sh-1);
+  padding: 25px 10px;
   border-radius: 6px;
   box-shadow: 1px 2px 3px 0px #aaa;
-  max-height: 750px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  grid-area: 2 / 2/ 2 / 2;
 }
-
+div.card > .button{
+  position: absolute;
+    top: 3rem;
+    right: 24rem;
+  color: #fff;
+  text-decoration: none;
+}
 /*IMAGEN DEL CONTENEDOR*/
 .card .imgContent {
   max-width: 250px;
@@ -269,7 +366,7 @@ div.card {
 
 /*TITULO DEL CONTENEDOR*/
 .card h3 {
-  line-height: 0;
+  line-height: inherit;
   color: #333;
   font-size: 42px;
 }
@@ -292,7 +389,7 @@ div.card {
   color: white;
   cursor: pointer;
   text-decoration: none;
-  transition-duration: .3s;
+  transition-duration: 0.3s;
   transition-property: background, border;
 }
 
@@ -302,20 +399,42 @@ div.card {
   border-color: #1abc9c;
 }
 
+.contentListArticle {
+  display: grid;
+  grid-template-rows: auto auto auto auto;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  align-content: center;
+  align-items: flex-start;
+  position: relative;
+  grid-column-gap: 1rem;
+}
 /*TARJETAS DEL LOS ARITCULOS*/
 div.cardArticle {
-  width: 92%;
+  width: 100%;
   height: 150px;
-  background-color: #f1f1f1;
-  padding: 10px;
+  background: linear-gradient(
+    rgba(255, 255, 255, 0.15) 0%,
+    rgba(255, 255, 255, 0.5) 100%
+  );
+  box-shadow: var(--bx-sh-1);
   border-radius: 6px;
   box-shadow: 1px 2px 3px 0px #aaa;
-  max-height: 150px;
+  position: relative;
   display: flex;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-end;
   flex-direction: row;
   margin: 10px 0;
+}
+/*-----BENTO GRID DEL BLOG-----*/
+div.cardArticle:first-child {
+  grid-area: 1 / 1 / 3 / 2;
+  background-color: #cdb4db;
+  height: 34.3em;
+}
+div.cardArticle:nth-child(n + 2) {
+  background-color: #cdb4db;
+  height: 16.5em;
 }
 
 /*-----SESION DEL BLOG-----*/
@@ -334,7 +453,7 @@ div.cardArticle {
   color: white;
   cursor: pointer;
   text-decoration: none;
-  transition-duration: .3s;
+  transition-duration: 0.3s;
   transition-property: background, border;
 }
 /*EFECTO HOVER PARA EL BOTON DEL IR AL INICIO*/
@@ -345,28 +464,28 @@ div.cardArticle {
 
 /*MARCO DE LA IMAGEN*/
 .cardArticle .imageContentArticle {
-  max-width: 250px;
-  max-height: 150px;
+  max-width: 100%;
+  max-height: inherit;
   background-color: #aaa;
   overflow: hidden;
-  width: 250px;
-  height: 150px;
-  margin-right: 16px;
+  width: inherit;
+  height: inherit;
+  z-index: 0;
   border-radius: 6px;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: absolute;
 }
 
 .cardArticle .imageContentArticle img {
   width: 250%;
-  height: 250px;
+  height: inherit;
 }
 
 /* IMAGEN DESTACADA DENTRO DEL ARTICULO*/
 .card .imageContentSingleArticle img {
- 
-  width:300px;
+  width: 300px;
   height: auto;
   margin-right: 16px;
   border-radius: 6px;
@@ -377,8 +496,7 @@ div.cardArticle {
 
 /* IMAGEN DESTACADA DENTRO DEL ARTICULO*/
 .form-group .imageContentSingleArticle img {
- 
-  width:150px;
+  width: 150px;
   height: auto;
   margin-right: 16px;
   border-radius: 6px;
@@ -389,46 +507,57 @@ div.cardArticle {
 
 /*CONTENEDOR DE LOS TEXTOS DEL ARTICULO*/
 .cardArticle .texContentArticle {
-  max-width: 90%;
+  max-width: 100%;
   max-height: 150px;
   overflow: hidden;
-  width: 98%;
+  width: 100%;
   height: auto;
-  margin-right: 16px;
   border-radius: 6px;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
+  z-index: 1;
+  position: relative;
+  padding: 20px;
+  background: linear-gradient(
+    rgba(255, 255, 255, 0.15) 0%,
+    rgba(255, 255, 255, 0.5) 100%
+  );
+  box-shadow: var(--bx-sh-1);
+  backdrop-filter: blur(5px);
 }
 /*TITULO DEL ARITUCLO*/
 .cardArticle h3 {
-  line-height: 0;
-  color: #333;
+  line-height: normal;
+  color: #fff;
   font-size: 22px;
+  margin: initial;
 }
 /*PARRAFO DEL ARITUCLO*/
 .cardArticle p {
+  color: #fff;
   font-size: 14px;
   font-style: normal;
   line-height: 1.1;
+  margin-top: 0.5;
 }
 /*BOTONES DE ARTICULOS*/
-.buttons{
+.buttons {
   display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 8px
+  grid-template-columns: 1fr 1fr;
+  column-gap: 8px;
 }
-.buttons button{
+.buttons button {
   border-radius: 8px;
   outline: none;
-  transition-duration: .3s;
+  transition-duration: 0.3s;
   font-size: 14px;
   font-style: normal;
   transition-property: background, border;
 }
-.buttons button:hover{
-  color: #FFF;
+.buttons button:hover {
+  color: #fff;
   background: #bc1a1a;
   border-color: #bc1a1a;
 }
@@ -444,7 +573,7 @@ div.cardArticle {
   color: white;
   cursor: pointer;
   text-decoration: none;
-  transition-duration: .3s;
+  transition-duration: 0.3s;
   transition-property: background, border;
 }
 /*EFECTO HOVER PARA EL BOTON DEL ARITUCLO*/
@@ -455,9 +584,60 @@ div.cardArticle {
 
 /*PANELES PRINCIPALES RESPONSIVO*/
 @media screen and (max-width: 700px) {
-  .side,
   .content {
     flex-direction: column;
     width: 100%;
+  }
+  div.row {
+    grid-template-columns: auto;
+  }
+  .side {
+    display: none;
+  }
+  .content {
+    display: grid;
+    grid-template-columns: auto;
+    width: 90%;
+  }
+  .searchNav {
+    width: 18em;
+    display: grid;
+  }
+  nav ul {
+    display: grid;
+    justify-content: space-around;
+    grid-template-columns: auto;
+  }
+
+  div.card {
+    width: 330px;
+    height: auto;
+    min-height: 550px;
+    background: linear-gradient(
+      rgba(255, 255, 255, 0.15) 0%,
+      rgba(255, 255, 255, 0.5) 100%
+    );
+    padding: 25px 10px;
+    border-radius: 6px;
+    box-shadow: var(--bx-sh-1);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    grid-area: 1 / 1/ 2 / 2;
+  }
+
+  div.cardArticle:first-child {
+    grid-area: 1 / 1 / 2 / 2;
+    background-color: #cdb4db;
+    height: 16.5em;
+  }
+
+  div.card > .button{
+    position: absolute;
+    top: 2rem;
+    right: 5rem;
+    color: #fff;
+    text-decoration: none;
   }
 }
