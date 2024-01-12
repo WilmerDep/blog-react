@@ -3,7 +3,9 @@ import { useForm } from "../../hooks/useForm";
 import { Petition } from "../../helpers/Petition";
 import { Global } from "../../helpers/Global";
 import { useParams } from "react-router-dom";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 export const Edit = () => {
   const { form, changed } = useForm({});
@@ -77,7 +79,17 @@ export const Edit = () => {
   return (
     <>
       <div className="card">
-        <h3>Editar Articulos: {article.title}</h3>
+        <div className="backtohome">
+          <Link to="/articulos" className="button">
+            <FontAwesomeIcon icon={faArrowLeft} /> Volver al Blog
+          </Link>
+        </div>
+
+        <h3>
+          Editar Articulos:
+          <br />
+          {article.title}
+        </h3>
         <strong>
           {result === "guardado" ? "Articulo guardado con Éxito" : ""}
         </strong>
@@ -86,6 +98,7 @@ export const Edit = () => {
             ? "Error al guardar el Articulo, el título o contenido debe superar los 3 caracteres"
             : ""}
         </strong>
+
         {error && <h2>{error}</h2>}
 
         <form onSubmit={editArticle}>

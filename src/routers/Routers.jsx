@@ -5,10 +5,10 @@ import { Create } from "../components/pages/Create";
 import { Edit } from "../components/pages/Edit";
 import { Search } from "../components/pages/Search";
 import { SingleArticle } from "../components/pages/SingleArticle";
-import { Header } from "../components/layout/Header";
 import { Nav } from "../components/layout/Nav";
 import { Footer } from "../components/layout/Footer";
-import { Sidebar } from "../components/layout/Sidebar";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBlog } from '@fortawesome/free-solid-svg-icons';
 
 export const Routers = () => {
   return (
@@ -32,13 +32,12 @@ export const Routers = () => {
                 <h1>Pagina no encontrada </h1>
                 <h3>ERROR 404</h3>
                 <div className="backtohome">
-                  <Link to="/articulos" className="button"> Volver al Blog </Link> 
+                  <Link to="/articulos" className="button"> Volver al Blog  <FontAwesomeIcon icon={faBlog} /> </Link> 
                 </div>
             </div>
           } />
         </Routes>
       </section>
-      <Sidebar />
       </div>
       <Footer />
     </BrowserRouter>

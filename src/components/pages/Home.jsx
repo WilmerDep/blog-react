@@ -6,7 +6,7 @@ export const Home = () => {
     <>
       <div className="card">
         <div className="imgContent">
-          <img src="https://picsum.photos/id/237/200/300" alt="" />
+        <FontAwesomeIcon icon={faBlog} />
         </div>
         <div className="texContentHome">
           <h3>Bienvenido a mi Blog</h3>

@@ -32,7 +32,7 @@ footer {
   z-index: 10;
 }
 .contentFotter {
-  width: 98%;
+  width:72%;
   text-align: center;
   background: linear-gradient(
     rgba(255, 255, 255, 0.15) 0%,
@@ -45,23 +45,27 @@ footer {
 
 /*ESTILO DEL MENU*/
 nav {
-  background-color: #333;
+
   position: sticky;
   top: 0px;
+  right: 14%;
+  left: 14%;
   min-height: 60px;
   display: grid;
   grid-auto-flow: 2;
   grid-auto-columns: 1 / span 2;
-  padding: 10px 20px;
+  padding: 14px 4px;
   z-index: 10;
+  width: 1366px;
 }
 
-nav ul {
+nav .menu {
   display: grid;
-  grid-template-columns: auto auto auto auto auto;
-  justify-content: center;
+  grid-template-columns: auto auto auto;
+  justify-content: space-between;
   align-items: center;
   text-align: center;
+
   list-style-type: none;
   margin: 0;
   background: linear-gradient(
@@ -74,16 +78,39 @@ nav ul {
   overflow: hidden;
 }
 
-nav ul li {
+
+nav .menu li {
   list-style: none;
   padding: 14px 20px;
 }
 
-nav ul li:first-child {
+nav .menu > li:nth-child(1) {
   list-style: none;
   font-size: 40px;
   color: white;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
+
+nav ul li .submenu ul {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  list-style-type: none;
+  margin: 0;
+  overflow: hidden;
+}
+
+nav ul li .submenu li a {
+  list-style: none;
+  color: white;
+  font-weight: bold;
+}
+
+nav ul li .submenu li a:hover {
+  color: #1BBC9C;
+} 
 
 nav a {
   color: white;
@@ -94,13 +121,11 @@ nav a {
   transition-property: background, border;
 }
 nav a:hover {
-  background-color: #ddd;
-  color: black;
+  color: #1BBC9C;
 }
 
 nav a:active {
-  background-color: #1abc9c;
-  color: black;
+  color: #1BBC9C;
 }
 
 /*CONTENEDOR PRICIPAL DEL CUERPO*/
@@ -108,8 +133,10 @@ div.row {
   background-color: #3b3b3b;
   display: grid;
   height: auto;
-  grid-template-columns: 4fr 1fr;
+  grid-template-columns: 4fr;
   gap: 16px;
+  place-content: center;
+  justify-items: center;
 }
 /*BARRA LATERAL*/
 aside {
@@ -126,7 +153,8 @@ aside {
 }
 /*CONTENEDOR PRINCIPAL*/
 .content {
-  width: 97%;
+  width: 100%;
+  max-width: 1366px;
   background-color: #3b3b3b;
   padding: 20px;
   display: grid;
@@ -179,20 +207,30 @@ form {
 }
 .searchNav {
   width: 18em;
-  display: none;
+  display: block;
 }
 
 .searchNav input[type="text"] {
   width: 60%;
   padding: 9px;
   border-radius: 16px;
-  border: 0;
-  border: 2px solid #1abc9c;
+  border: 2px solid #fff;
+  color: #fff;
+  background-color: transparent;
+  outline: none;
+  font-weight: bold;
 }
-.searchNav input[type="submit"] {
+.searchNav input::placeholder {
+  font-weight: bold;
+  opacity: 1;
+  color: #fff;
+}
+
+.searchNav button {
   width: 30%;
   padding: 9px;
-  border-radius: 16px;
+  font-size: 18px;
+  border-radius: 25px;
   margin-left: 6px;
   outline: none;
   border-style: solid;
@@ -204,6 +242,11 @@ form {
   transition-duration: 0.3s;
   transition-property: background, border;
 }
+.searchNav button:hover {
+  background-color: #3B3B3B;
+  border-color: #3B3B3B;
+}
+
 
 /*LABELS DE FORMULARIO*/
 label {
@@ -334,18 +377,15 @@ div.card {
   flex-direction: column;
   grid-area: 2 / 2/ 2 / 2;
 }
-div.card > .button{
+div.card > .button {
   position: absolute;
-    top: 3rem;
-    right: 24rem;
+  top: 3rem;
+  right: 24rem;
   color: #fff;
   text-decoration: none;
 }
 /*IMAGEN DEL CONTENEDOR*/
 .card .imgContent {
-  max-width: 250px;
-  max-height: 250px;
-  background-color: #aaa;
   overflow: hidden;
   width: auto;
   height: 250px;
@@ -354,6 +394,10 @@ div.card > .button{
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.card .imgContent {
+  font-size: 220px;
+  color: #fff;
 }
 
 /*TEXTOS DEL CONTENEDOR*/
@@ -369,12 +413,13 @@ div.card > .button{
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  color: white;
 }
 
 /*TITULO DEL CONTENEDOR*/
 .card h3 {
   line-height: inherit;
-  color: #333;
+  color: white;
   font-size: 42px;
 }
 /*PARRAFO DEL CONTENEDOR*/
@@ -435,7 +480,7 @@ div.cardArticle {
 }
 /*-----BENTO GRID DEL BLOG-----*/
 div.cardArticle:first-child {
-  grid-area: 1 / 1 / 3 / 2;
+  grid-area: 1 / 2 / 3 / 2;
   background-color: #cdb4db;
   height: 34.3em;
 }
@@ -575,8 +620,9 @@ div.cardArticle:nth-child(n + 2) {
   border-radius: 6px;
   outline: none;
   border-style: solid;
-  border-color: #333;
-  background: #333333;
+  border-color:  #1abc9c;
+  background:  #1abc9c;
+  
   color: white;
   cursor: pointer;
   text-decoration: none;
@@ -585,8 +631,8 @@ div.cardArticle:nth-child(n + 2) {
 }
 /*EFECTO HOVER PARA EL BOTON DEL ARITUCLO*/
 .cardArticle .texContentArticle a:hover {
-  background: #1abc9c;
-  border-color: #1abc9c;
+  background: transparent;
+  border-color: #fff;
 }
 
 /*PANELES PRINCIPALES RESPONSIVO*/
@@ -633,6 +679,10 @@ div.cardArticle:nth-child(n + 2) {
     flex-direction: column;
     grid-area: 1 / 1/ 2 / 2;
   }
+  .card .imgContent {
+    font-size: 160px;
+    color: #fff;
+  }
 
   div.cardArticle:first-child {
     grid-area: 1 / 1 / 2 / 2;
@@ -640,11 +690,44 @@ div.cardArticle:nth-child(n + 2) {
     height: 16.5em;
   }
 
-  div.card > .button{
+  div.card > .button {
     position: absolute;
     top: 2rem;
     right: 5rem;
     color: #fff;
     text-decoration: none;
   }
+
+  .cardArticle .texContentArticle {
+    max-width: 100%;
+    max-height: 175px;
+  }
+
+  .contentFotter {
+    width:98%;}
+}
+
+/*Scroll perzonalizado*/
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #f5f5f5;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: #f5f5f5;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #1abc9c;
+  border-radius: 8px;
+
+  background-image: -webkit-gradient(
+    linear,
+    255 255,
+    255 100%,
+    color-stop(0.5, rgba(27, 188, 156, 0.2)),
+    color-stop(0.5, transparent),
+    to(transparent)
+  );
 }
