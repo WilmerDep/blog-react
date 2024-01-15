@@ -20,8 +20,8 @@ export const Routers = () => {
       <section id="content" className="content">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/inicio" element={<Home />} />
           <Route path="/articulos" element={<Articles />} />
+          <Route path="/inicio" element={<Home />} />
           <Route path="/crear" element={<Create />} />
           <Route path="/editar/:id" element={<Edit />} />
           <Route path="/buscar/:searching" element={<Search />} />

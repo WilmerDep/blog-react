@@ -16,7 +16,7 @@ export const Nav = () => {
       <ul className="menu">
         <li>
           <div>
-            <Link to="/">
+            <Link to="/articulos">
               My <FontAwesomeIcon icon={faBlog} /> log
             </Link>
           </div>
