@@ -100,6 +100,7 @@ nav ul li .submenu ul {
   list-style-type: none;
   margin: 0;
   overflow: hidden;
+  width: 100%;
 }
 
 nav ul li .submenu li a {
@@ -636,6 +637,15 @@ div.cardArticle:nth-child(n + 2) {
 }
 
 /*PANELES PRINCIPALES RESPONSIVO*/
+@media screen and (max-width: 1280px) {
+  nav{
+    width: 100%;
+  }
+  .content {
+    width: 100%;
+    max-width: 1250px;}
+}
+/*PANELES PRINCIPALES RESPONSIVO*/
 @media screen and (max-width: 700px) {
   .content {
     flex-direction: column;
@@ -653,17 +663,31 @@ div.cardArticle:nth-child(n + 2) {
     width: 90%;
   }
   .searchNav {
-    width: 18em;
+    width: 92%;
     display: grid;
   }
-  nav ul {
+  .searchNav button {
+    width: 18%;
+  }
+  nav{
+    width: 100%;
+  }
+  nav .menu {
     display: grid;
-    justify-content: space-around;
+    justify-content: center;
     grid-template-columns: auto;
+    align-items: center;
+    margin-left: -44px;
   }
-
+  nav .menu li{
+    padding: 10px 0px;
+  }
+.submenu{
+  width: 92%;
+  justify-content: center;
+}
   div.card {
-    width: 330px;
+    width: 100%;
     height: auto;
     min-height: 550px;
     background: linear-gradient(
@@ -696,8 +720,20 @@ div.cardArticle:nth-child(n + 2) {
     right: 5rem;
     color: #fff;
     text-decoration: none;
+    
   }
 
+  .form-group input, .form-group textarea {
+    width: 94%;
+    border-color: #eee;
+  }
+  .form-group input[type="file"] {
+    border-color: #eee;
+  }
+
+  .form-group input[type="submit"] {
+    width: 100%;
+  }
   .cardArticle .texContentArticle {
     max-width: 100%;
     max-height: 175px;
